@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+
+	<head>
+		<title>productized</title>
+	</head>
+
+	<body>
+		hello!
+		{% if messages %}
+
+			{% for message in messages %}
+				<li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+			{% endfor %}
+
+		{% endif %}
+		<form action="" id="plsignup" method="POST">
+				{% csrf_token%}
+				{{ form.as_table }}
+				<input type="submit" value="submit" />
+		</form>
+	</body>
+
+
+
+</html>
